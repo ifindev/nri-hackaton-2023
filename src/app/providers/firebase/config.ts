@@ -6,14 +6,14 @@
  *
  * @link https://github.com/nuxt-community/firebase-module/issues/129
  */
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const firebaseConfig = {
-  apiKey: 'AIzaSyB8Ga26rjWs9r8gthDEIiRngKvYeNZoqv0',
-  authDomain: 'app-template-rifandani.firebaseapp.com',
-  databaseURL:
-    'https://app-template-rifandani-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId: 'app-template-rifandani',
-  storageBucket: 'app-template-rifandani.appspot.com',
-  messagingSenderId: '857956675105',
-  appId: '1:857956675105:web:56dc7e64a9456db850fd60',
-  measurementId: 'G-26JF65W3J7',
+  apiKey: 'AIzaSyBD63DaktkPsNJ2_BH_PcCO6VqTZebOt6c',
+  authDomain: 'bitconnect-hackathon-2023.firebaseapp.com',
+  projectId: 'bitconnect-hackathon-2023',
+  storageBucket: 'bitconnect-hackathon-2023.appspot.com',
+  messagingSenderId: '592594082064',
+  appId: '1:592594082064:web:3bb3c1cdadc2a491736d95',
+  measurementId: 'G-BMD7LJB8SE',
 };
