@@ -1,8 +1,11 @@
 import hanepyongCurious from '@assets/images/hanepyong-curious.png';
 import landingBg from '@assets/images/landing.png';
 import { Button, Overlay } from '@mantine/core';
+import { useSearchParams } from 'react-router-dom';
 
 export default function OnboardingNextFlight() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div className="relative h-full w-full">
       <div className="absolute z-[999] flex  h-full w-full flex-col items-center">
@@ -27,6 +30,10 @@ export default function OnboardingNextFlight() {
                 key={hour}
                 variant="default"
                 className="h-full w-1/3 bg-hanepyon-blue"
+                onClick={() => {
+                  searchParams.set('step', 'category');
+                  setSearchParams(searchParams);
+                }}
               >
                 <div className="flex h-full w-full flex-col items-center justify-center">
                   <h2 className="text-[2.5em] font-bold leading-[48px] text-white">
