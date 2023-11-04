@@ -1,5 +1,7 @@
+import wellDone from '@assets/audios/5-well-done.mp3';
 import checkMark from '@assets/images/check-mark.svg';
 import hanepyongJumping from '@assets/images/hanepyon-happy-jump.png';
+import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Overlay } from '@mantine/core';
 import { ComponentPropsWithoutRef } from 'react';
 
@@ -15,6 +17,7 @@ export default function OnboardingSwipeFinish({
   withCheckMark,
   ...props
 }: Props) {
+  usePlayAudio(wellDone);
   return (
     <div className="relative h-full w-full" {...props}>
       {withCheckMark && (

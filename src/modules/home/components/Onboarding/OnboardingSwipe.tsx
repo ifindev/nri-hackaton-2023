@@ -1,6 +1,8 @@
+import instruction from '@assets/audios/7-category-selection-start.mp3';
 import landingBg from '@assets/images/landing.png';
 import swipeLeft from '@assets/images/swipe-left.svg';
 import swipeRight from '@assets/images/swipe-right.svg';
+import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Overlay, Transition } from '@mantine/core';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
@@ -15,6 +17,7 @@ interface Props {
 }
 
 function OnboardingSwipe({ count, title, description, type, onSwipe }: Props) {
+  usePlayAudio(instruction);
   const [leaveX, setLeaveX] = useState(0);
 
   return (
@@ -121,7 +124,7 @@ export default function OnboardingSwipeWrapper() {
                 card.count === 1
                   ? () => {
                       setCards((prev) =>
-                        prev.filter((_card) => _card.count !== 1),
+                        prev.filter((_card) => _card.count !== 1)
                       );
                     }
                   : () => {
