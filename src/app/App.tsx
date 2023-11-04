@@ -1,4 +1,3 @@
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { StrictMode } from 'react';
 import AppDatesProvider from './providers/dates/DatesProvider';
 import AppErrorBoundary from './providers/error/ErrorBoundary';
@@ -28,10 +27,10 @@ export default function App() {
                   <ReloadPromptSW />
 
                   {/* react query devtools */}
-                  <ReactQueryDevtools
+                  {/* <ReactQueryDevtools
                     initialIsOpen={false}
                     buttonPosition="bottom-left"
-                  />
+                  /> */}
                 </AppToastProvider>
               </AppDatesProvider>
             </AppMantineProvider>
