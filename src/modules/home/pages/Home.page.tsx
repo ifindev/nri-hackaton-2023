@@ -1,10 +1,10 @@
-import useCheckAuthFirebase from '@auth/hooks/useCheckAuth/useCheckAuthFirebase.hook';
 import HomeClock from '@home/components/HomeClock/HomeClock';
+import Wrapper from '@home/components/TinderCard/Wrapper';
 import { useI18nContext } from '@i18n/i18n-react';
 import { Container, Text } from '@mantine/core';
 
 export default function HomePage() {
-  useCheckAuthFirebase();
+  // useCheckAuthFirebase();
   const { LL } = useI18nContext();
 
   return (
@@ -14,6 +14,8 @@ export default function HomePage() {
       </Text>
 
       <HomeClock />
+
+      <Wrapper />
     </Container>
   );
 }
