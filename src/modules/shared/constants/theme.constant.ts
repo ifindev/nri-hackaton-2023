@@ -2,7 +2,7 @@ import { DEFAULT_THEME, createTheme, mergeMantineTheme } from '@mantine/core';
 
 /** Your theme configuration is merged with Mantine default theme */
 export const appTheme = createTheme({
-  fontFamily: 'Lato, sans-serif',
+  fontFamily: 'Barlow, sans-serif',
   defaultRadius: 'md',
   primaryColor: 'blue',
   colors: {

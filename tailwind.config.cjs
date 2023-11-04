@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lato', ...defaultTheme.fontFamily.sans],
+        sans: ['Barlow', ...defaultTheme.fontFamily.sans],
       },
       lineClamp: {
         7: '7',
