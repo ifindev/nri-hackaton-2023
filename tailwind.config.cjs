@@ -10,6 +10,12 @@ module.exports = {
   darkMode: 'class', // default 'media'
   theme: {
     extend: {
+      colors: {
+        hanepyon: {
+          yellow: '#E4DD06',
+          blue: '#1864AB',
+        },
+      },
       fontFamily: {
         sans: ['Barlow', ...defaultTheme.fontFamily.sans],
       },

@@ -10,7 +10,7 @@ export default function AppDatesProvider({ children }: PropsWithChildren) {
 
   return (
     <DatesContext.Provider value={value}>
-      <DatesProvider settings={value[0]}>{children}</DatesProvider>;
+      <DatesProvider settings={value[0]}>{children}</DatesProvider>
     </DatesContext.Provider>
   );
 }
