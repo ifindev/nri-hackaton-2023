@@ -1,7 +1,9 @@
+import pickAvatarAudio from '@assets/audios/2-pick-avatar.mp3';
 import femaleImg from '@assets/images/female.png';
 import hanepyonAvatarImg from '@assets/images/hanepyon-avatar.png';
 import landingImg from '@assets/images/landing.png';
 import maleImg from '@assets/images/male.png';
+import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { ActionIcon, Button, Overlay } from '@mantine/core';
 import { useState } from 'react';
@@ -9,6 +11,7 @@ import { useSearchParams } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 
 export default function HanepyonSecond() {
+  usePlayAudio(pickAvatarAudio);
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedAvatar, setSelectedAvatar] = useState<
     'hanepyon' | 'female' | 'male'
@@ -39,12 +42,12 @@ export default function HanepyonSecond() {
             variant="transparent"
             className={twMerge(
               'rounded-full bg-white/50 text-hanepyon-blue',
-              selectedAvatar === 'hanepyon' && 'bg-transparent',
+              selectedAvatar === 'hanepyon' && 'bg-transparent'
             )}
             onClick={() => {
               if (selectedAvatar !== 'hanepyon') {
                 setSelectedAvatar(
-                  selectedAvatar === 'female' ? 'hanepyon' : 'female',
+                  selectedAvatar === 'female' ? 'hanepyon' : 'female'
                 );
               }
             }}
@@ -69,12 +72,12 @@ export default function HanepyonSecond() {
             variant="transparent"
             className={twMerge(
               'rounded-full bg-white/50 text-hanepyon-blue',
-              selectedAvatar === 'male' && 'bg-transparent',
+              selectedAvatar === 'male' && 'bg-transparent'
             )}
             onClick={() => {
               if (selectedAvatar !== 'male') {
                 setSelectedAvatar(
-                  selectedAvatar === 'hanepyon' ? 'female' : 'male',
+                  selectedAvatar === 'hanepyon' ? 'female' : 'male'
                 );
               }
             }}
