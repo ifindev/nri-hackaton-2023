@@ -7,7 +7,6 @@ import AppMantineProvider from './providers/mantine/MantineProvider';
 import AppQueryProvider from './providers/query/QueryProvider';
 import AppRouterProvider from './providers/router/RouterProvider';
 import AppToastProvider from './providers/toast/ToastProvider';
-import ReloadPromptSW from './pwa/ReloadPromptSW';
 
 export default function App() {
   return (
@@ -24,7 +23,7 @@ export default function App() {
                   </AppFirebaseProvider>
 
                   {/* PWA */}
-                  <ReloadPromptSW />
+                  {/* <ReloadPromptSW /> */}
 
                   {/* react query devtools */}
                   {/* <ReactQueryDevtools

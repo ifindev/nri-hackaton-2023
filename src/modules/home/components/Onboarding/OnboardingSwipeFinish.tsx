@@ -3,11 +3,13 @@ import checkMark from '@assets/images/check-mark.svg';
 import hanepyongJumping from '@assets/images/hanepyon-happy-jump.png';
 import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Overlay } from '@mantine/core';
-import { ComponentPropsWithoutRef } from 'react';
+import { useTimeout } from '@mantine/hooks';
+import { ComponentPropsWithoutRef, useEffect } from 'react';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
   text: string;
   background: string;
+  timeoutCallback: () => void;
   withCheckMark?: boolean;
 }
 
@@ -15,9 +17,17 @@ export default function OnboardingSwipeFinish({
   text,
   background,
   withCheckMark,
+  timeoutCallback,
   ...props
 }: Props) {
   usePlayAudio(wellDone);
+  const { start, clear } = useTimeout(timeoutCallback, 5_000);
+
+  useEffect(() => {
+    start();
+    return clear;
+  }, [clear, start]);
+
   return (
     <div className="relative h-full w-full" {...props}>
       {withCheckMark && (

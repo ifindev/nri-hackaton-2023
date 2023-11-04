@@ -6,6 +6,7 @@ import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Overlay, Transition } from '@mantine/core';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import OnboardingSwipeFinish from './OnboardingSwipeFinish';
 
 interface Props {
@@ -74,6 +75,7 @@ function OnboardingSwipe({ count, title, description, type, onSwipe }: Props) {
 }
 
 export default function OnboardingSwipeWrapper() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [showFinish, setShowFinish] = useState(false);
   const [cards, setCards] = useState([
     {
@@ -106,6 +108,10 @@ export default function OnboardingSwipeWrapper() {
             text="Well done!"
             background={landingBg}
             withCheckMark
+            timeoutCallback={() => {
+              searchParams.set('step', 'time');
+              setSearchParams(searchParams);
+            }}
             style={style}
           />
         )}
@@ -120,17 +126,13 @@ export default function OnboardingSwipeWrapper() {
               title={card.title}
               type={card.type}
               description={card.description}
-              onSwipe={
-                card.count === 1
-                  ? () => {
-                      setCards((prev) =>
-                        prev.filter((_card) => _card.count !== 1)
-                      );
-                    }
-                  : () => {
-                      setShowFinish(true);
-                    }
-              }
+              onSwipe={() => {
+                if (card.count === 1) {
+                  setCards((prev) => prev.filter((_card) => _card.count !== 1));
+                } else {
+                  setShowFinish(true);
+                }
+              }}
             />
           ))}
       </AnimatePresence>
