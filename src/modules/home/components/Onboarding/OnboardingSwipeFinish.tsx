@@ -11,17 +11,19 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
   background: string;
   timeoutCallback: () => void;
   withCheckMark?: boolean;
+  timeout?: number; // in milliseconds
 }
 
 export default function OnboardingSwipeFinish({
   text,
   background,
   withCheckMark,
+  timeout = 6_000,
   timeoutCallback,
   ...props
 }: Props) {
   usePlayAudio(wellDone);
-  const { start, clear } = useTimeout(timeoutCallback, 5_000);
+  const { start, clear } = useTimeout(timeoutCallback, timeout);
 
   useEffect(() => {
     start();

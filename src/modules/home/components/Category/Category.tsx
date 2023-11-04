@@ -166,27 +166,36 @@ export default function CategoryWrapper() {
               image={card.image}
               onSwipe={(type) => {
                 if (type === 'liking') {
-                  setSelected((prev) => prev.concat(card.title));
+                  const newSelected = selected.concat(card.title);
+                  if (newSelected.length === 3) {
+                    setShowFinish(true);
+                    return;
+                  }
+
+                  setSelected(newSelected);
                 }
+
                 if (type === 'skipping' && selected.length === 0) {
                   setSelected((prev) =>
                     prev.filter((val) => val !== card.title),
                   );
                 }
 
-                setCards((prev) =>
-                  prev.filter((_card) => _card.title !== card.title),
-                );
-
-                if (selected.length < 3) {
+                if (cards.length === 1) {
+                  // set back to initial cards without the selected cards
                   setCards(
                     initialCards.filter(
                       (_card) => !selected.includes(_card.title),
                     ),
                   );
-                } else {
-                  setShowFinish(true);
+
+                  return;
                 }
+
+                // filter already selected cards
+                setCards((prev) =>
+                  prev.filter((_card) => _card.title !== card.title),
+                );
               }}
             />
           ))}
