@@ -1,20 +1,22 @@
 import checkMark from '@assets/images/check-mark.svg';
 import hanepyongJumping from '@assets/images/hanepyon-happy-jump.png';
 import { Overlay } from '@mantine/core';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   text: string;
   background: string;
   withCheckMark?: boolean;
 }
 
-export default function OnboardingFinish({
+export default function OnboardingSwipeFinish({
   text,
   background,
   withCheckMark,
+  ...props
 }: Props) {
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full" {...props}>
       {withCheckMark && (
         <div className="absolute z-[999] flex  h-full w-full flex-col items-center px-8 pt-20">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-hanepyon-blue bg-hanepyon-yellow font-bold text-hanepyon-blue">

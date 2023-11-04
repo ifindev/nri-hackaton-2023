@@ -1,8 +1,11 @@
 import hanepyonLandingImg from '@assets/images/hanepyon-landing.png';
 import landingImg from '@assets/images/landing.png';
 import { AspectRatio, Button, Overlay } from '@mantine/core';
+import { useSearchParams } from 'react-router-dom';
 
 export default function HanepyonFirst() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <AspectRatio ratio={360 / 720} className="!static mx-auto">
       <img src={landingImg} alt="Landing" />
@@ -21,7 +24,14 @@ export default function HanepyonFirst() {
           away?
         </h1>
 
-        <Button size="xl" className="ml-8 rounded-full bg-hanepyon-blue px-10">
+        <Button
+          size="xl"
+          className="ml-8 rounded-full bg-hanepyon-blue px-10"
+          onClick={() => {
+            searchParams.set('step', 'avatar');
+            setSearchParams(searchParams);
+          }}
+        >
           YUPPP!
         </Button>
 

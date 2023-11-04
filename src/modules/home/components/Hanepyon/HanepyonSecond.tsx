@@ -5,9 +5,11 @@ import maleImg from '@assets/images/male.png';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { ActionIcon, Button, Overlay } from '@mantine/core';
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 
 export default function HanepyonSecond() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedAvatar, setSelectedAvatar] = useState<
     'hanepyon' | 'female' | 'male'
   >('hanepyon');
@@ -89,6 +91,10 @@ export default function HanepyonSecond() {
           size="xl"
           className="mx-auto mt-10 w-[80%] rounded-full bg-hanepyon-blue disabled:bg-[#CED4DA] disabled:text-[#909296]"
           disabled={selectedAvatar !== 'hanepyon'}
+          onClick={() => {
+            searchParams.set('step', 'how-to-use');
+            setSearchParams(searchParams);
+          }}
         >
           CONTINUE
         </Button>
