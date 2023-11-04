@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { ActionIcon } from '@mantine/core';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Counter from './Counter';
@@ -33,8 +34,9 @@ export default function Wrapper() {
       setCards((current) => [...current, newCard]);
     }
   };
+
   return (
-    <div className="gradient relative flex h-screen w-full flex-col items-center justify-center">
+    <div className="relative flex h-screen w-full flex-col items-center justify-center">
       <AnimatePresence>
         {cards.map((card, index) => (
           <TinderCard
@@ -46,26 +48,20 @@ export default function Wrapper() {
         ))}
       </AnimatePresence>
 
-      {cards.length === 0 && (
-        <span className="text-xl text-white">End of Stack</span>
-      )}
+      {cards.length === 0 && <span className="text-xl text-white">Empty</span>}
 
-      <footer className="absolute bottom-4 flex items-center space-x-4">
-        <div className="flex flex-col items-center space-y-2">
-          <button
-            type="button"
-            className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-black disabled:cursor-not-allowed"
-            disabled={history.length === 0}
-            onClick={undoSwipe}
-          >
-            <Icon icon="lucide:rotate-cw" strokeWidth={3} />
-          </button>
-          <span className="text-xs text-white">Undo</span>
-        </div>
+      <footer className="absolute bottom-4 flex items-center space-x-4 bg-red-100">
+        <ActionIcon
+          className="inline-flex items-center justify-center rounded-full disabled:cursor-not-allowed"
+          size="xl"
+          disabled={history.length === 0}
+          onClick={undoSwipe}
+        >
+          <Icon icon="lucide:rotate-cw" strokeWidth={3} />
+        </ActionIcon>
 
-        <Counter label="Likes" count={result.like} />
         <Counter label="Nopes" count={result.nope} />
-        <Counter label="Superlike" count={result.superlike} />
+        <Counter label="Likes" count={result.like} />
       </footer>
     </div>
   );

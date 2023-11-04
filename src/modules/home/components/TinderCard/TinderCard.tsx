@@ -12,7 +12,7 @@ export default function TinderCard({ card, removeCard, active }: CardProps) {
     <>
       {active ? (
         <motion.div
-          className="absolute flex h-[430px] w-[300px] cursor-grab flex-col items-center justify-center rounded-2xl bg-white shadow-xl"
+          className="absolute flex h-[400px] w-[300px] cursor-grab flex-col items-center justify-center rounded-2xl bg-white shadow-xl"
           animate={{
             scale: 1.05,
             rotate: `${card.name.length % 2 === 0 ? 6 : -6}deg`,
@@ -45,7 +45,7 @@ export default function TinderCard({ card, removeCard, active }: CardProps) {
             }
           }}
         >
-          <span role="img" aria-label={card.name} className="text-[140px]">
+          <span role="img" className="text-[140px]">
             {card.emoji}
           </span>
           <p style={{ color: card.color }} className="text-5xl font-bold">
@@ -55,11 +55,11 @@ export default function TinderCard({ card, removeCard, active }: CardProps) {
       ) : (
         <Stack
           className={twJoin(
-            'absolute h-[430px] w-[300px] cursor-grab items-center justify-center rounded-2xl bg-white shadow-xl',
+            'absolute h-[400px] w-[300px] cursor-grab items-center justify-center rounded-2xl bg-white shadow-xl',
             card.name.length % 2 === 0 ? 'rotate-6' : '-rotate-6',
           )}
         >
-          <span role="img" aria-label={card.name} className="text-[140px]">
+          <span role="img" className="text-[140px]">
             {card.emoji}
           </span>
           <p style={{ color: card.color }} className="text-5xl font-bold">
