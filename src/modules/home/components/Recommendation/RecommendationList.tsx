@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import hanepyon from '@assets/images/hanepyon-recommending.png';
-import qrCode from '@assets/images/qr-code.svg';
+import qrCode from '@assets/images/qr-code.png';
 import recom1 from '@assets/images/recom-1.png';
 import recom2 from '@assets/images/recom-2.png';
 import recom3 from '@assets/images/recom-3.png';
