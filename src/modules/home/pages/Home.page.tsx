@@ -1,16 +1,18 @@
-import Onboarding from '@home/components/Onboarding/Onboarding';
-import Wrapper from '@home/components/TinderCard/Wrapper';
-import { Container } from '@mantine/core';
+import Onboarding from '@home/components/Onboarding/OnboardingSwipe';
 
 export default function HomePage() {
   return (
-    <Container pt="md" className="flex min-h-screen flex-col bg-blue-100">
-      {/* <Text component="h1" size="xl">
-        {LL.home.title()}
-      </Text> */}
-
-      <Wrapper />
-      <Onboarding />
-    </Container>
+    <div className="h-screen bg-red-100 font-sans">
+      <Onboarding
+        count={1}
+        title="Let's get you ready!"
+        description={
+          <h2 className="mt-20 text-center text-[1.75em] font-bold leading-[1.75em] text-hanepyon-blue">
+            Swipe right with <br /> two fingers to like!
+          </h2>
+        }
+        type="swipe-right"
+      />
+    </div>
   );
 }
