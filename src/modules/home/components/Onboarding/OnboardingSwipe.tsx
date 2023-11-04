@@ -38,7 +38,7 @@ export default function OnboardingSwipe({
         {description}
       </div>
       <img className="h-full w-full" src={landingBg} alt="Demo" />
-      <Overlay color="#FFF" backgroundOpacity={0.7} blur={10} />
+      <Overlay color="#FFF" backgroundOpacity={0.5} blur={10} />
     </div>
   );
 }

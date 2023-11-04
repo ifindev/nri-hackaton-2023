@@ -1,9 +1,9 @@
-import Onboarding from '@home/components/Onboarding/OnboardingSwipe';
+import OnboardingSwipe from '@home/components/Onboarding/OnboardingSwipe';
 
 export default function HomePage() {
   return (
     <div className="h-screen bg-red-100 font-sans">
-      <Onboarding
+      <OnboardingSwipe
         count={1}
         title="Let's get you ready!"
         description={
