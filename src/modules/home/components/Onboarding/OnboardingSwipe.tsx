@@ -20,7 +20,7 @@ export default function OnboardingSwipe({
 }: Props) {
   return (
     <div className="relative h-full w-full">
-      <div className="absolute z-[999] flex  h-full w-full flex-col items-center justify-center ">
+      <div className="absolute z-[999] flex  h-full w-full flex-col items-center px-8 pt-20">
         <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-hanepyon-blue bg-hanepyon-yellow font-bold text-hanepyon-blue">
           <p className="text-[1.75em] leading-[1.75em]">{count}</p>
         </div>
