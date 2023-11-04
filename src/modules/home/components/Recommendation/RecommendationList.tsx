@@ -68,13 +68,13 @@ export default function RecommendationList() {
       <div className="mt-8 w-full rounded-lg bg-[#F9F7F1] p-[2px] font-sans">
         <Button
           variant="default"
-          className="w-1/2 rounded-md border-none bg-hanepyon-yellow"
+          className="w-1/2 rounded-md border-none bg-hanepyon-yellow text-[#25262B]"
         >
           BEST PICK
         </Button>
         <Button
           variant="default"
-          className="w-1/2 border-none text-hanepyon-blue"
+          className="w-1/2 border-none bg-transparent text-hanepyon-blue"
         >
           OTHERS
         </Button>
