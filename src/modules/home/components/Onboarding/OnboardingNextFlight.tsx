@@ -2,7 +2,7 @@ import nextFlight from '@assets/audios/6-flight-time.mp3';
 import hanepyongCurious from '@assets/images/hanepyong-curious.png';
 import landingBg from '@assets/images/landing.png';
 import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
-import { Button, Overlay } from '@mantine/core';
+import { Overlay } from '@mantine/core';
 import { useSearchParams } from 'react-router-dom';
 
 export default function OnboardingNextFlight() {
@@ -27,11 +27,11 @@ export default function OnboardingNextFlight() {
           <h2 className="mt-[3.75rem] text-center text-[2.5rem] font-bold leading-[3rem] text-hanepyon-blue">
             in
           </h2>
-          <Button.Group className="mt-6 h-[6.125rem] w-full">
+          <div className="mt-6 flex h-[6.125rem] w-full items-center gap-0 overflow-hidden rounded-lg [&>*:not(:last-child)]:border-r [&>*:not(:last-child)]:border-r-white ">
             {[3, 6, 12].map((hour) => (
-              <Button
+              <button
+                type="button"
                 key={hour}
-                variant="default"
                 className="h-full w-1/3 bg-hanepyon-blue"
                 onClick={() => {
                   searchParams.set('step', 'category');
@@ -44,9 +44,9 @@ export default function OnboardingNextFlight() {
                   </h2>
                   <p className="text-base font-normal text-white">hours</p>
                 </div>
-              </Button>
+              </button>
             ))}
-          </Button.Group>
+          </div>
         </div>
       </div>
       <img className="h-full w-full" src={landingBg} alt="Demo" />
