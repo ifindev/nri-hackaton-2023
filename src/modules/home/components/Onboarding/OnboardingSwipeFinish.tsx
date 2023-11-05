@@ -35,7 +35,7 @@ export default function OnboardingSwipeFinish({
     <div className="relative h-full w-full" {...props}>
       {withCheckMark && (
         <div className="absolute z-[999] flex  h-full w-full flex-col items-center px-8 pt-20">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-hanepyon-blue bg-hanepyon-yellow font-bold text-hanepyon-blue">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-hanepyon-yellow font-bold text-hanepyon-blue">
             <img src={checkMark} alt="checkmark icon" />
           </div>
         </div>
@@ -47,12 +47,12 @@ export default function OnboardingSwipeFinish({
           src={hanepyongJumping}
           alt="Hanepyon jumping happily"
         />
-        <h1 className="mt-8 text-center text-[2.5em] font-bold text-hanepyon-blue">
+        <h1 className="mt-8 text-center text-[2.5em] font-bold text-white">
           {text}
         </h1>
       </div>
       <img className="h-full w-full" src={background} alt="Demo" />
-      <Overlay color="#FFF" backgroundOpacity={0.8} blur={10} />
+      <Overlay color="#000" opacity={1} blur={1} />
     </div>
   );
 }

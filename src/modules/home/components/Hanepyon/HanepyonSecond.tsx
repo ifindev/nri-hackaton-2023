@@ -1,7 +1,7 @@
 import pickAvatarAudio from '@assets/audios/2-pick-avatar.mp3';
 import femaleImg from '@assets/images/female.png';
+import hanedaAirport from '@assets/images/haneda.png';
 import hanepyonAvatarImg from '@assets/images/hanepyon-avatar.png';
-import landingImg from '@assets/images/landing.png';
 import maleImg from '@assets/images/male.png';
 import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -20,7 +20,7 @@ export default function HanepyonSecond() {
   return (
     <div className="relative h-full w-full">
       <div className="absolute z-[999] flex h-full w-full flex-col items-center">
-        <h2 className="pt-10 text-center text-[1.75rem] font-bold leading-[2.4rem] text-hanepyon-blue">
+        <h2 className="pt-10 text-center text-[1.75rem] font-bold leading-[2.4rem] text-white">
           Pick your avatar!
         </h2>
 
@@ -41,7 +41,7 @@ export default function HanepyonSecond() {
             size="xl"
             variant="transparent"
             className={twMerge(
-              'rounded-full bg-white/50 text-hanepyon-blue',
+              'rounded-full bg-black/50 text-hanepyon-yellow',
               selectedAvatar === 'hanepyon' && 'bg-transparent'
             )}
             onClick={() => {
@@ -59,7 +59,7 @@ export default function HanepyonSecond() {
             />
           </ActionIcon>
 
-          <h1 className="text-[2.5rem] font-bold leading-10 text-hanepyon-blue">
+          <h1 className="text-[2.5rem] font-bold leading-10 text-white">
             {selectedAvatar === 'hanepyon'
               ? 'Hanepyon'
               : selectedAvatar === 'female'
@@ -71,7 +71,7 @@ export default function HanepyonSecond() {
             size="xl"
             variant="transparent"
             className={twMerge(
-              'rounded-full bg-white/50 text-hanepyon-blue',
+              'rounded-full bg-black/50 text-hanepyon-yellow',
               selectedAvatar === 'male' && 'bg-transparent'
             )}
             onClick={() => {
@@ -92,7 +92,7 @@ export default function HanepyonSecond() {
 
         <Button
           size="xl"
-          className="mx-auto mt-10 w-[80%] rounded-full bg-hanepyon-blue disabled:bg-[#CED4DA] disabled:text-[#909296]"
+          className="mx-auto mt-10 w-[80%] rounded-full bg-hanepyon-yellow text-hanepyon-blue disabled:bg-[#CED4DA] disabled:text-[#909296]"
           disabled={selectedAvatar !== 'hanepyon'}
           onClick={() => {
             searchParams.set('step', 'how-to-use');
@@ -103,11 +103,8 @@ export default function HanepyonSecond() {
         </Button>
       </div>
 
-      <img className="h-full w-full" src={landingImg} alt="Landing" />
-      <Overlay
-        gradient="linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.50) 100%)"
-        blur={4}
-      />
+      <img className="h-full w-full" src={hanedaAirport} alt="Landing" />
+      <Overlay color="#000" opacity={1} blur={1} />
     </div>
   );
 }
