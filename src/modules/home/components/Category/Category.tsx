@@ -1,4 +1,5 @@
 import bgm from '@assets/audios/8-selection-bgm.mp3';
+import greatChoices from '@assets/audios/9-great-choices.mp3';
 import culinary from '@assets/images/culinary.png';
 import cultural from '@assets/images/cultural.png';
 import recreational from '@assets/images/recreational.png';
@@ -66,19 +67,19 @@ function Category({
             <span
               className={twMerge(
                 'h-2 w-1/3 rounded-l bg-slate-50/50',
-                numOfSelected >= 1 && 'bg-hanepyon-blue'
+                numOfSelected >= 1 && 'bg-hanepyon-blue',
               )}
             />
             <span
               className={twMerge(
                 'h-2 w-1/3 bg-slate-50/50',
-                numOfSelected >= 2 && 'bg-hanepyon-blue'
+                numOfSelected >= 2 && 'bg-hanepyon-blue',
               )}
             />
             <span
               className={twMerge(
                 'h-2 w-1/3 rounded-r bg-slate-50/50',
-                numOfSelected >= 3 && 'bg-hanepyon-blue'
+                numOfSelected >= 3 && 'bg-hanepyon-blue',
               )}
             />
           </div>
@@ -92,7 +93,7 @@ function Category({
               {chips.map((chip) => (
                 <p
                   className={twJoin(
-                    'rounded-full bg-white/20 px-3 py-1 font-bold text-white'
+                    'rounded-full bg-white/20 px-3 py-1 font-bold text-white',
                   )}
                 >
                   {chip}
@@ -150,6 +151,7 @@ export default function CategoryWrapper() {
           <OnboardingSwipeFinish
             text="Great choice!"
             background={culinary}
+            audio={greatChoices}
             timeoutCallback={() => {
               navigate('recommendation');
             }}
@@ -180,7 +182,7 @@ export default function CategoryWrapper() {
 
                 if (type === 'skipping' && selected.length === 0) {
                   setSelected((prev) =>
-                    prev.filter((val) => val !== card.title)
+                    prev.filter((val) => val !== card.title),
                   );
                 }
 
@@ -188,8 +190,8 @@ export default function CategoryWrapper() {
                   // set back to initial cards without the selected cards
                   setCards(
                     initialCards.filter(
-                      (_card) => !selected.includes(_card.title)
-                    )
+                      (_card) => !selected.includes(_card.title),
+                    ),
                   );
 
                   return;
@@ -197,7 +199,7 @@ export default function CategoryWrapper() {
 
                 // filter already selected cards
                 setCards((prev) =>
-                  prev.filter((_card) => _card.title !== card.title)
+                  prev.filter((_card) => _card.title !== card.title),
                 );
               }}
             />
