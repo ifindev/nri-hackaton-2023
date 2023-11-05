@@ -1,3 +1,4 @@
+import wellDone from '@assets/audios/5-well-done.mp3';
 import instruction from '@assets/audios/7-category-selection-start.mp3';
 import landingBg from '@assets/images/landing.png';
 import swipeLeft from '@assets/images/swipe-left.svg';
@@ -34,15 +35,15 @@ function OnboardingSwipe({ count, title, description, type, onSwipe }: Props) {
         x: leaveX,
         opacity: 0,
         scale: 0.5,
-        transition: { duration: 0.2 },
+        transition: { duration: 1 },
       }}
       drag
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       onDragEnd={(_e, info) => {
-        if (info.offset.x > 100 && count === 1) {
+        if (info.offset.x > 50 && count === 1) {
           setLeaveX(1000);
           onSwipe();
-        } else if (info.offset.x < -100 && count === 2) {
+        } else if (info.offset.x < -50 && count === 2) {
           setLeaveX(-1000);
           onSwipe();
         }
@@ -94,7 +95,7 @@ export default function OnboardingSwipeWrapper() {
       type: 'swipe-right' as const,
       description: (
         <h2 className="mt-20 text-center text-[1.75em] font-bold leading-[1.75em] text-hanepyon-blue">
-          Swipe right with <br /> two fingers to pass!
+          Swipe right with <br /> two fingers to like!
         </h2>
       ),
     },
@@ -108,6 +109,7 @@ export default function OnboardingSwipeWrapper() {
             text="Well done!"
             background={landingBg}
             withCheckMark
+            audio={wellDone}
             timeoutCallback={() => {
               searchParams.set('step', 'time');
               setSearchParams(searchParams);

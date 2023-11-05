@@ -1,4 +1,3 @@
-import wellDone from '@assets/audios/5-well-done.mp3';
 import checkMark from '@assets/images/check-mark.svg';
 import hanepyongJumping from '@assets/images/hanepyon-happy-jump.png';
 import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
@@ -9,6 +8,7 @@ import { ComponentPropsWithoutRef, useEffect } from 'react';
 interface Props extends ComponentPropsWithoutRef<'div'> {
   text: string;
   background: string;
+  audio: string;
   timeoutCallback: () => void;
   withCheckMark?: boolean;
   timeout?: number; // in milliseconds
@@ -18,11 +18,12 @@ export default function OnboardingSwipeFinish({
   text,
   background,
   withCheckMark,
+  audio,
   timeout = 6_000,
   timeoutCallback,
   ...props
 }: Props) {
-  usePlayAudio(wellDone);
+  usePlayAudio(audio);
   const { start, clear } = useTimeout(timeoutCallback, timeout);
 
   useEffect(() => {
