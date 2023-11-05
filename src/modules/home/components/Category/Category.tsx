@@ -42,13 +42,13 @@ function Category({
         x: leaveX,
         opacity: 0,
         scale: 0.5,
-        transition: { duration: 0.2 },
+        transition: { duration: 1 },
       }}
       drag
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       onDragEnd={(_e, info) => {
-        const liking = info.offset.x > 100;
-        const skipping = info.offset.x < -100;
+        const liking = info.offset.x > 30;
+        const skipping = info.offset.x < -30;
 
         if (liking) {
           setLeaveX(1000);
