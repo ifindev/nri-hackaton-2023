@@ -1,9 +1,11 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import hanepyon from '@assets/images/hanepyon-recommending.png';
+import map from '@assets/images/map.png';
 import qrCode from '@assets/images/qr-code.png';
 import recom1 from '@assets/images/recom-1.png';
 import recom2 from '@assets/images/recom-2.png';
 import recom3 from '@assets/images/recom-3.png';
+import train from '@assets/images/train.svg';
 import { Button } from '@mantine/core';
 
 interface RecommendationProps {
@@ -14,7 +16,7 @@ interface RecommendationProps {
 
 function Recommendation({ img, title, description }: RecommendationProps) {
   return (
-    <div className="flex h-auto flex-col rounded-lg">
+    <div className="flex h-auto flex-col rounded-lg shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
       <img src={img} alt="Recommendation" width="100%" height={200} />
       <div className="flex flex-col gap-1 rounded-b-lg border-t-4 border-t-hanepyon-yellow bg-white p-3">
         <h2 className="text-[28px] font-bold leading-[38px] text-[#25262B]">
@@ -80,21 +82,37 @@ export default function RecommendationList() {
         </Button>
       </div>
 
-      <div className="mt-[18px] flex h-[98px] w-full items-center rounded-2xl bg-white">
-        <div className="flex w-1/2 flex-col p-4">
-          <h2 className="text-[28px] font-bold leading-[38px] text-[#25262B]">
-            4,800円
+      <div className="mt-[18px] flex h-[98px] w-full items-center rounded-2xl bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
+        <div className="flex w-1/3 flex-col p-4">
+          <h2 className="text-base font-bold leading-6 text-[#25262B]">
+            2,500円
           </h2>
-          <p className="text-base leading-6 text-[#25262B]">Cost</p>
+          <p className="text-xs leading-6 text-[#5C5F66]">COST</p>
         </div>
-        <div className="h-16 w-px bg-[#9EBEDB]" />
-        <div className="flex w-1/2 flex-col  p-4">
-          <h2 className="text-[28px] font-bold leading-[38px] text-[#25262B]">
+        <div className="h-10 w-px bg-[#9EBEDB]" />
+        <div className="flex w-1/3 flex-col  p-4">
+          <h2 className="text-base font-bold leading-6 text-[#25262B]">
             2h 30m
           </h2>
-          <p className="text-base leading-6 text-[#25262B]">Duration</p>
+          <p className="text-xs leading-6 text-[#5C5F66]">DURATION</p>
+        </div>
+        <div className="h-10 w-px bg-[#9EBEDB]" />
+        <div className="flex w-1/3 flex-col  p-4">
+          <div className="flex items-center gap-2">
+            <img src={train} alt="train icon" height={18} width={16} />
+            <h2 className="text-base font-bold leading-6 text-[#25262B]">
+              12m
+            </h2>
+          </div>
+          <p className="text-xs leading-6 text-[#5C5F66]">BY TRAIN</p>
         </div>
       </div>
+
+      <img
+        src={map}
+        className="mt-4 h-[180px] w-full rounded-2xl shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]"
+        alt="Map"
+      />
 
       <div className="my-4 flex h-full w-full flex-col gap-4">
         {recommendations.map((item) => (
@@ -106,7 +124,7 @@ export default function RecommendationList() {
           />
         ))}
 
-        <div className="flex flex-col gap-1 rounded-lg bg-white p-3">
+        <div className="flex flex-col gap-1 rounded-lg bg-white p-3 shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
           <h2 className="text-center text-[28px] font-bold leading-[38px] text-[#25262B]">
             Send Plan via QR Code
           </h2>
