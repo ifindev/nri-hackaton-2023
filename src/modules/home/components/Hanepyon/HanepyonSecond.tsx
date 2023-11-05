@@ -104,7 +104,7 @@ export default function HanepyonSecond() {
       </div>
 
       <img className="h-full w-full" src={hanedaAirport} alt="Landing" />
-      <Overlay color="#000" opacity={1} blur={1} />
+      <Overlay color="#000" opacity={1} />
     </div>
   );
 }

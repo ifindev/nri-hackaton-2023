@@ -52,7 +52,7 @@ export default function OnboardingNextFlight() {
         </div>
       </div>
       <img className="h-full w-full" src={hanedaAirport} alt="Demo" />
-      <Overlay color="#000" opacity={1} blur={1} />
+      <Overlay color="#000" opacity={1} />
     </div>
   );
 }
