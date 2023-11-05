@@ -108,10 +108,16 @@ export default function RecommendationList() {
         </div>
       </div>
 
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <img
         src={map}
         className="mt-4 h-[180px] w-full rounded-2xl shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]"
         alt="Map"
+        onClick={() => {
+          window.open(
+            'https://www.google.com/maps/dir/Haneda+Airport+(HND),+Hanedakuko,+Ota+City,+Tokyo+144-0041/Kamata+Hachiman+Shrine,+4+Chome-18-18+Kamata,+Ota+City,+Tokyo/@35.5548044,139.7336668,14.21z/data=!4m14!4m13!1m5!1m1!1s0x6018640ba43192e3:0xd32c3a9d146f8df!2m2!1d139.7798386!2d35.5493932!1m5!1m1!1s0x60186057775c02f1:0xc7a2407380526bb8!2m2!1d139.7224486!2d35.5606119!3e3?entry=ttu',
+          );
+        }}
       />
 
       <div className="my-4 flex h-full w-full flex-col gap-4">
