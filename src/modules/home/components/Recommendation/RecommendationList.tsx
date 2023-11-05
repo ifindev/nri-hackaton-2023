@@ -82,7 +82,7 @@ export default function RecommendationList() {
         </Button>
       </div>
 
-      <div className="mt-[18px] flex h-[98px] w-full items-center rounded-2xl bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
+      <div className="mt-[18px] flex h-[64px] w-full items-center rounded-2xl bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
         <div className="flex w-1/3 flex-col p-4">
           <h2 className="text-base font-bold leading-6 text-[#25262B]">
             2,500円
