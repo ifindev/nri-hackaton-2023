@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import opening1 from '@assets/audios/1-opening.mp3';
+import opening from '@assets/audios/1-opening.mp3';
 import hanepyonLandingImg from '@assets/images/hanepyon-landing.png';
 import landingImg from '@assets/images/landing.png';
-import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
+import usePlayAudioManual from '@auth/hooks/usePlayAudio/usePlayAudioManual.hook';
 import { AspectRatio, Button, Overlay } from '@mantine/core';
 import { useSearchParams } from 'react-router-dom';
 
 export default function HanepyonFirst() {
-  usePlayAudio(opening1);
-
+  const { setIsPlaying } = usePlayAudioManual(opening);
   const [searchParams, setSearchParams] = useSearchParams();
 
   return (
@@ -40,11 +40,17 @@ export default function HanepyonFirst() {
           YUPPP!
         </Button>
 
-        <img
-          src={hanepyonLandingImg}
-          alt="Hanepyon Landing"
-          className="h-[468px] w-[468px]"
-        />
+        <button
+          className="h-auto w-full"
+          onClick={() => setIsPlaying(true)}
+          type="button"
+        >
+          <img
+            src={hanepyonLandingImg}
+            alt="Hanepyon Landing"
+            className="h-[468px] w-[468px]"
+          />
+        </button>
       </div>
 
       <Overlay

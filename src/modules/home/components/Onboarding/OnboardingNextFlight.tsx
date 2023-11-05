@@ -1,9 +1,12 @@
+import nextFlight from '@assets/audios/6-flight-time.mp3';
 import hanepyongCurious from '@assets/images/hanepyong-curious.png';
 import landingBg from '@assets/images/landing.png';
+import usePlayAudio from '@auth/hooks/usePlayAudio/usePlayAudio.hook';
 import { Button, Overlay } from '@mantine/core';
 import { useSearchParams } from 'react-router-dom';
 
 export default function OnboardingNextFlight() {
+  usePlayAudio(nextFlight);
   const [searchParams, setSearchParams] = useSearchParams();
 
   return (

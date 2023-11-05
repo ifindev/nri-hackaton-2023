@@ -59,7 +59,7 @@ export default function HanepyonSecond() {
             />
           </ActionIcon>
 
-          <h1 className="text-[2.5rem] font-bold leading-10 text-hanepyon-yellow">
+          <h1 className="text-[2.5rem] font-bold leading-10 text-hanepyon-blue">
             {selectedAvatar === 'hanepyon'
               ? 'Hanepyon'
               : selectedAvatar === 'female'
