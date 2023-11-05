@@ -49,7 +49,7 @@ export default function RecommendationList() {
   ];
 
   return (
-    <div className="flex h-full w-full flex-col bg-gradient-to-t from-[#B9C6D3] to-[#E1EBF6] px-4 pt-[30px]">
+    <div className="flex h-auto w-full flex-col bg-gradient-to-t from-[#B9C6D3] to-[#E1EBF6] px-4 pt-[30px]">
       <div className="flex items-start justify-between">
         <h2 className="grow text-[28px] font-bold leading-[38px] text-hanepyon-blue">
           Here is my <br />
@@ -96,7 +96,7 @@ export default function RecommendationList() {
         </div>
       </div>
 
-      <div className="my-4 flex h-full w-full flex-col gap-4 overflow-scroll">
+      <div className="my-4 flex h-full w-full flex-col gap-4">
         {recommendations.map((item) => (
           <Recommendation
             key={item.img}
